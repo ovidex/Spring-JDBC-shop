@@ -1,21 +1,23 @@
 package com.db.school.demo.customer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
 
+    @Autowired
+    private CustomerService customerService;
+
     @GetMapping
-    public Customer getCustomer(@RequestParam("name") String name){
-        return new Customer(12, "CatalinStircu", name, "Catalin", "0774544179",
-                "Strada Izvor", "Constanta", "900365", "Romania");
+    public Customer getCustomer(@RequestParam("id") int id){
+        return customerService.getCustomer(id);
     }
 
     @PostMapping
     public Customer createCustomer(@RequestBody Customer customer) {
-        System.out.println(customer);
-        return customer;
+        return customerService.createCustomer(customer);
     }
 }
 
