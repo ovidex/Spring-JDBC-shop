@@ -23,6 +23,10 @@ public class Customer {
         this.country = country;
     }
 
+    public Customer() {
+
+    }
+
     public int getId() {
         return id;
     }
