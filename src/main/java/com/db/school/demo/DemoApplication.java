@@ -1,4 +1,4 @@
-package com.db.school.demo.demo;
+package com.db.school.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
