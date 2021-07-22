@@ -3,7 +3,7 @@ package com.db.school.demo.customer;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomerService {
+public class CustomerService implements CustomerServiceContract {
 
     public CustomerService(){
         System.out.println("Constructor!");

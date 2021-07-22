@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerController {
 
     @Autowired
-    private CustomerService customerService;
+    private CustomerServiceContract customerService;
 
     @GetMapping
     public Customer getCustomer(@RequestParam("id") int id){
