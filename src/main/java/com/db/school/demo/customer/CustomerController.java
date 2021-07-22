@@ -1,15 +1,21 @@
 package com.db.school.demo.customer;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/customer")
 public class CustomerController {
 
-    @GetMapping("/customer")
-    public String getCustomer(@RequestParam("name") String name){
-        return "Data about customer " + name;
+    @GetMapping
+    public Customer getCustomer(@RequestParam("name") String name){
+        return new Customer(12, "CatalinStircu", name, "Catalin", "0774544179",
+                "Strada Izvor", "Constanta", "900365", "Romania");
+    }
+
+    @PostMapping
+    public Customer createCustomer(@RequestBody Customer customer) {
+        System.out.println(customer);
+        return customer;
     }
 }
 
